@@ -42,27 +42,39 @@ if (contrastToggle) {
     })
 }
 
-// sliding cards
-const slider = document.getElementById('slider')
-const prevBtn = document.getElementById('prevBtn')
-const nextBtn = document.getElementById('nextBtn')
+// Track which slide is currently active
 let currentSlide = 0
 const totalSlides = 3
 
-nextBtn.addEventListener('click', function() {
-    if (currentSlide < totalSlides - 1) {
-        currentSlide++
-    } else {
-        currentSlide = 0
-    }
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`
-})
+// Grab all cards and all tabs
+const cards = document.querySelectorAll('.stack-card')
+const tabs = document.querySelectorAll('.tab')
 
-prevBtn.addEventListener('click', function() {
-    if (currentSlide > 0) {
-        currentSlide--
-    } else {
-        currentSlide = totalSlides - 1
-    }
-    slider.style.transform = `translateX(-${currentSlide * 100}%)`
-})
+function goToSlide(index) {
+    // Update current slide
+    currentSlide = index
+
+    // Loop through every card and assign the right class
+    cards.forEach(function (card, i) {
+        // Remove all position classes first
+        card.classList.remove('active', 'behind-1', 'behind-2', 'hidden')
+
+        // Calculate how far this card is from the active one
+        let distance = i - currentSlide
+
+        // Wrap around for cards before the active one
+        if (distance < 0) distance += totalSlides
+
+        // Assign class based on distance
+        if (distance === 0) card.classList.add('active')
+        else if (distance === 1) card.classList.add('behind-1')
+        else if (distance === 2) card.classList.add('behind-2')
+        else card.classList.add('hidden')
+    })
+
+    // Update tabs — active tab gets dark, others grey out
+    tabs.forEach(function (tab, i) {
+        tab.classList.remove('active')
+        if (i === currentSlide) tab.classList.add('active')
+    })
+}
