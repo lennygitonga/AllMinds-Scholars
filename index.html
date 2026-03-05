@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+    
+    <!-- Nav-bar -->
+    <header>
+    <nav>
+    <div class="nav-brand">
+        <a href="index.html">AllMinds Scholars</a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+</header>
+
+<!-- Accessibility -->
+  <div class="access-bar">
+        <span>Accessibility:</span>
+        <button id="dyslexicToggle">Dyslexic Font</button>
+        <button id="contrastToggle">High Contrast</button>
+    </div>
+
+    <!-- Hero -->
+<section class="hero">
+        <div class="hero-text">
+            <h1>Find the scholarship <em>built for you</em></h1>
+            <p>AllMinds Scholars surfaces funding opportunities for neurodivergent students, adult learners, and everyone in between. No clutter. No overwhelm. Just the right scholarship.</p>
+            <div class="hero-search">
+                <input type="text" id="heroSearch" placeholder="Search by keyword, country, or field...">
+                <button onclick="window.location.href='scholarships.html'">Search</button>
+            </div>
+    
+            <!-- Hero-tags -->
+            <div class="hero-tags">
+                <a href="scholarships.html?filter=No Essay">No Essay</a>
+                <a href="scholarships.html?filter=Fully Funded">Fully Funded</a>
+                <a href="scholarships.html?filter=Neurodivergent">Neurodivergent</a>
+                <a href="scholarships.html?filter=Adult Learner">Adult Learner</a>
+                <a href="scholarships.html?filter=Quick Apply">Quick Apply</a>
+            </div>
+
+            <!-- Scholarship-cards -->
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-tag">Fully Funded</div>
+                <h3>Chevening Scholarship</h3>
+                <p>UK Government · All Fields</p>
+                <span class="hero-card-deadline">Deadline: November 2026</span>
+            </div>
+            <div class="hero-card hero-card-2">
+                <div class="hero-card-tag tag-neuro">Neurodivergent</div>
+                <h3>Neurodiversity Alliance Scholarship</h3>
+                <p>USA · All Fields · Video Submission</p>
+                <span class="hero-card-deadline">Deadline: April 2027</span>
+            </div>
+            <div class="hero-card hero-card-3">
+                <div class="hero-card-tag tag-quick ">No Essay</div>
+                <h3>Be Bold Scholarship</h3>
+                <p>Bold.org · All Fields</p>
+                <span class="hero-card-deadline">Monthly Rolling</span>
+            </div>
+             <div class="hero-card hero-card-4">
+                <div class="hero-card-tag tag-adult">Adult Learners</div>
+                <h3>Jeannette Rankin Women's Scholarship</h3>
+                <p>USA · All Fields</p>
+                <span class="hero-card-deadline">Deadline: November 2026</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+     <section class="stats">
+        <div class="stat">
+            <h2>20+</h2>
+            <p>Real Scholarships</p>
+        </div>
+        <div class="stat">
+            <h2>15+</h2>
+            <p>Countries</p>
+        </div>
+        <div class="stat">
+            <h2>3</h2>
+            <p>Audience Filters</p>
+        </div>
+        <div class="stat">
+            <h2>100%</h2>
+            <p>Free to Use</p>
+        </div>
+    </section>
+
+    <!-- Who is it for -->
+       <section class="for-section">
+        <h2>Built for minds that are often overlooked</h2>
+        <p class="section-sub">Most scholarship platforms were designed for one type of student. We weren't.</p>
+        <div class="for-cards">
+            <div class="for-card">
+                <div class="for-icon"></div>
+                <h3>Neurodivergent Students</h3>
+                <p>Students with ADHD, Autism, Dyslexia or other learning differences. We surface no-essay, video submission, and quick-apply scholarships — and our interface is designed to reduce cognitive load.</p>
+                <a href="scholarships.html?audience=Neurodivergent" class="for-link">See Neurodivergent Scholarships →</a>
+            </div>
+            <div class="for-card">
+                <div class="for-icon"></div>
+                <h3>Adult Learners</h3>
+                <p>Career switchers, parents, and workers over 30 going back to school. Filter by time commitment and find scholarships that understand your situation.</p>
+                <a href="scholarships.html?audience=Adult Learner" class="for-link">See Adult Learner Scholarships →</a>
+            </div>
+            <div class="for-card">
+                <div class="for-icon"></div>
+                <h3>Everyone Else</h3>
+                <p>Fully funded international scholarships, no-essay awards, and opportunities from over 15 countries — open to all students regardless of background.</p>
+                <a href="scholarships.html" class="for-link">Browse All Scholarships →</a>
+            </div>
+        </div>
+    </section>
+
+<!-- Featured scholarships -->
+    <section class="featured">
+        <h2>Featured Scholarships</h2>
+        <p class="section-sub">A hand-picked selection of real, verified opportunities</p>
+        <div class="featured-grid" id="featuredGrid">
+            <!-- JS -->
+        </div>
+        <a href="scholarships.html" class="view-all-btn">View All Scholarships</a>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <h3>AllMinds Scholars</h3>
+            <p>Scholarships for minds that work differently.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scholarships.html">Scholarships</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>hello@allmindsscholars.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 AllMinds Scholars.</p>
+    </div>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
