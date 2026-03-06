@@ -14,10 +14,14 @@ body {
     line-height: 1.6;
 }
 
-body.dyslexic { font-family: 'OpenDyslexic', 
-    sans-serif !important; 
+body.dyslexic { 
+    font-family: 'OpenDyslexic', sans-serif !important; 
 }
-body.high-contrast { background: #000 !important; color: #fff !important; filter: contrast(1.5); }
+body.high-contrast { 
+    background: #000 !important; 
+    color: #fff !important; 
+    filter: contrast(1.5); 
+}
 
 /* Nav-bar */
 nav {
@@ -65,7 +69,8 @@ nav {
     transition: background 0.2s !important;
 }
 
-.nav-btn:hover { background: #c9664c !important; }
+.nav-btn:hover { 
+    background: #c9664c !important; }
 
 .hamburger { 
     display: none;
@@ -478,7 +483,11 @@ nav {
     border-top: 1px solid #f0ddd3;
 }
 
-.card-deadline { font-size: 0.78rem; color: #e07a5f; font-weight: 500; }
+.card-deadline { 
+    font-size: 0.78rem; 
+    color: #e07a5f; 
+    font-weight: 500; 
+}
 
 .card-btn {
     padding: 7px 16px;
@@ -508,10 +517,15 @@ nav {
     transition: background 0.2s;
 }
 
-.view-all-btn:hover { background: #5a3e3e; }
+.view-all-btn:hover {
+     background: #5a3e3e; 
+    }
 
 /* Footer */
-footer { background: #3d2c2c; color: #fdf6f0; }
+footer { 
+    background: #3d2c2c; 
+    color: #fdf6f0; 
+}
 
 .footer-top {
     display: flex;
@@ -530,7 +544,10 @@ footer { background: #3d2c2c; color: #fdf6f0; }
     margin-bottom: 8px;
 }
 
-.footer-brand p { font-size: 0.9rem; color: #f0ddd3; }
+.footer-brand p { 
+    font-size: 0.9rem; 
+    color: #f0ddd3; 
+}
 
 .footer-links h4, .footer-contact h4 {
     font-size: 0.85rem;
@@ -540,7 +557,12 @@ footer { background: #3d2c2c; color: #fdf6f0; }
     letter-spacing: 1px;
 }
 
-.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links ul { 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+}
 
 .footer-links a {
     text-decoration: none;
@@ -549,8 +571,14 @@ footer { background: #3d2c2c; color: #fdf6f0; }
     transition: color 0.2s;
 }
 
-.footer-links a:hover { color: #e07a5f; }
-.footer-contact p { color: #f0ddd3; font-size: 0.9rem; }
+.footer-links a:hover { 
+    color: #e07a5f; 
+}
+
+.footer-contact p { 
+    color: #f0ddd3; 
+    font-size: 0.9rem; 
+}
 
 .footer-bottom {
     border-top: 1px solid #5a3e3e;
