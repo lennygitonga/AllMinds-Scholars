@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <header>
+        <nav>
+            <div class="nav-brand">
+                <a href="index.html">AllMinds Scholars</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="scholarships.html">Scholarships</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+     <!-- LOGIN PAGE -->
+    <div class="login-page">
+        <div class="login-card">
+
+            <div class="login-header">
+                <h1>Welcome back</h1>
+                <p>Sign in to access your saved scholarships</p>
+            </div>
+
+            <!-- Toggle between Login and Register -->
+            <div class="login-toggle">
+                <button class="toggle-btn active" id="loginTab" onclick="switchTab('login')">Sign In</button>
+                <button class="toggle-btn" id="registerTab" onclick="switchTab('register')">Register</button>
+            </div>
+
+            <!-- Google Sign In -->
+            <button class="google-btn" onclick="alert('Google Sign In coming soon!')">
+               
+                Continue with Google
+            </button>
+
+            <div class="divider">or</div>
+
+            <!-- SIGN IN FORM -->
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com" id="loginEmail">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" id="loginPassword">
+                </div>
+                <div class="forgot"><a href="#">Forgot password?</a></div>
+                <button type="button" class="submit-btn" onclick="handleLogin()">Sign In</button>
+            </form>
+
+            <!-- REGISTER FORM -->
+            <form class="login-form hidden" id="registerForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your name" id="registerName">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="you@example.com" id="registerEmail">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" id="registerPassword">
+                </div>
+                <button type="button" class="submit-btn" onclick="handleRegister()">Create Account</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>AllMinds Scholars</h3>
+                <p>Scholarships for minds that work differently.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scholarships.html">Scholarships</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>hello@allmindsscholars.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AllMinds Scholars. Built for minds that work differently.</p>
+        </div>
+</body>
+</html>
