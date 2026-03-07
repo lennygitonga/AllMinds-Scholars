@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css\scholarships.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-brand">
+            <a href="index.html">AllMinds Scholars</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="join us.html">Join Us</a></li>
+            <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+     <!-- Accessibility -->
+    <div class="access-bar">
+        <span>Accessibility:</span>
+        <button id="dyslexicToggle">Dyslexic Font</button>
+        <button id="contrastToggle">High Contrast</button>
+    </div>
+    <!-- page -->
+    <div class="page-header">
+        <h1>Find Your Scholarship</h1>
+        <p>Real, verified opportunities for every kind of student</p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by name, country, or field...">
+            <button onclick="applyFilters()">Search</button>
+        </div>
+    </div>
+
+   
+    <div class="scholarships-layout">
+
+        <!-- FILTERS -->
+        <aside class="filters">
+            <h3>Filter</h3>
+
+            <div class="filter-group">
+                <h4>Audience</h4>
+                <label><input type="checkbox" value="General" onchange="applyFilters()"> General</label>
+                <label><input type="checkbox" value="Neurodivergent" onchange="applyFilters()"> Neurodivergent</label>
+                <label><input type="checkbox" value="Adult Learner" onchange="applyFilters()"> Adult Learner</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Funding Type</h4>
+                <label><input type="checkbox" value="Fully Funded" onchange="applyFilters()"> Fully Funded</label>
+                <label><input type="checkbox" value="Partial" onchange="applyFilters()"> Partial</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Application Type</h4>
+                <label><input type="checkbox" value="No Essay" onchange="applyFilters()"> No Essay</label>
+                <label><input type="checkbox" value="Quick Apply" onchange="applyFilters()"> Quick Apply</label>
+                <label><input type="checkbox" value="Video Submission" onchange="applyFilters()"> Video
+                    Submission</label>
+                <label><input type="checkbox" value="Full Application" onchange="applyFilters()"> Full
+                    Application</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Time Commitment</h4>
+                <label><input type="checkbox" value="5 Minutes" onchange="applyFilters()"> 5 Minutes</label>
+                <label><input type="checkbox" value="30 Minutes" onchange="applyFilters()"> 30 Minutes</label>
+                <label><input type="checkbox" value="1-2 Hours" onchange="applyFilters()"> 1-2 Hours</label>
+                <label><input type="checkbox" value="Deep Dive" onchange="applyFilters()"> Deep Dive</label>
+            </div>
+
+            <button class="clear-btn" onclick="clearFilters()">Clear All Filters</button>
+        </aside>
+
+        <!-- Scholarship Results -->
+        <div>
+            <div class="results-header">
+                <p class="results-count">Showing <span id="resultsCount">0</span> scholarships</p>
+            </div>
+            <div class="scholarships-grid" id="scholarshipsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>AllMinds Scholars</h3>
+                <p>Scholarships for minds that work differently.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scholarships.html">Scholarships</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="join us.html">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>hello@allmindsscholars.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AllMinds Scholars.</p>
+        </div>
+    </footer>
+    <script src="scholarships.js"></script>
+</body>
+
+</html>
