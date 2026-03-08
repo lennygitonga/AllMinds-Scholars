@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard</title>
+    <link rel="stylesheet" href="css\dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-brand">
+            <a href="index.html">AllMinds Scholars</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="join us.html">Join Us</a></li>
+            <li><a href="dashboard.html" class="nav-btn">Dashboard</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+     <!-- Accessibility -->
+    <div class="access-bar">
+        <span>Accessibility:</span>
+        <button id="dyslexicToggle">Dyslexic Font</button>
+        <button id="contrastToggle">High Contrast</button>
+    </div>
+
+    <!-- DASHBOARD HERO -->
+    <div class="dashboard-hero">
+        <div class="dashboard-hero-content">
+            <div class="welcome-text">
+                <h1>Welcome back, <span id="userName">Scholar</span> </h1>
+                <p>Here are your saved scholarships and upcoming deadlines</p>
+            </div>
+            <div class="profile-card">
+                <div class="profile-avatar" id="profileAvatar">S</div>
+                <div class="profile-info">
+                    <h3 id="profileName">Scholar</h3>
+                    <p id="profileEmail">Not logged in</p>
+                </div>
+                <button class="logout-btn" onclick="logout()">Log Out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stats-bar-inner">
+            <div class="dash-stat">
+                <h3 id="savedCount">0</h3>
+                <p>Saved Scholarships</p>
+            </div>
+            <div class="dash-stat">
+                <h3 id="upcomingCount">0</h3>
+                <p>Upcoming Deadlines</p>
+            </div>
+            <div class="dash-stat">
+                <h3 id="fundedCount">0</h3>
+                <p>Fully Funded</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="dashboard-content">
+        <h2 class="section-title">Saved Scholarships</h2>
+        <div class="saved-grid" id="savedGrid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>AllMinds Scholars</h3>
+                <p>Scholarships for minds that work differently.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="scholarships.html">Scholarships</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="join us.html">Join Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>hello@allmindsscholars.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AllMinds Scholars.</p>
+        </div>
+    </footer>
+    <script src="dashboard.js"></script>
+</body>
+</html>
