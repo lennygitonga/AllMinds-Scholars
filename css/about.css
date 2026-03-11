@@ -129,7 +129,7 @@
  }
 
  .us-container {
-    background-image: url('https://unsplash.com/photos/photo-of-brown-wooden-bookshelf-xrbbXIXAWY0');
+     background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400');
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -255,68 +255,69 @@
  }
 
  /* Footer */
-footer { 
-    background: #3d2c2c; 
-    color: #fdf6f0; 
-}
+ footer {
+     background: #3d2c2c;
+     color: #fdf6f0;
+ }
 
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    padding: 48px 40px;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+ .footer-top {
+     display: flex;
+     justify-content: space-between;
+     padding: 48px 40px;
+     gap: 40px;
+     flex-wrap: wrap;
+     max-width: 1200px;
+     margin: 0 auto;
+ }
 
-.footer-brand h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.2rem;
-    color: #e07a5f;
-    margin-bottom: 8px;
-}
+ .footer-brand h3 {
+     font-family: 'Fraunces', serif;
+     font-size: 1.2rem;
+     color: #e07a5f;
+     margin-bottom: 8px;
+ }
 
-.footer-brand p { 
-    font-size: 0.9rem; 
-    color: #f0ddd3; 
-}
+ .footer-brand p {
+     font-size: 0.9rem;
+     color: #f0ddd3;
+ }
 
-.footer-links h4, .footer-contact h4 {
-    font-size: 0.85rem;
-    color: #f2cc8f;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+ .footer-links h4,
+ .footer-contact h4 {
+     font-size: 0.85rem;
+     color: #f2cc8f;
+     margin-bottom: 12px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
 
-.footer-links ul { 
-    list-style: none; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-}
+ .footer-links ul {
+     list-style: none;
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+ }
 
-.footer-links a {
-    text-decoration: none;
-    color: #f0ddd3;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
+ .footer-links a {
+     text-decoration: none;
+     color: #f0ddd3;
+     font-size: 0.9rem;
+     transition: color 0.2s;
+ }
 
-.footer-links a:hover { 
-    color: #e07a5f; 
-}
+ .footer-links a:hover {
+     color: #e07a5f;
+ }
 
-.footer-contact p { 
-    color: #f0ddd3; 
-    font-size: 0.9rem; 
-}
+ .footer-contact p {
+     color: #f0ddd3;
+     font-size: 0.9rem;
+ }
 
-.footer-bottom {
-    border-top: 1px solid #5a3e3e;
-    padding: 16px 40px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #f0ddd3;
-}
+ .footer-bottom {
+     border-top: 1px solid #5a3e3e;
+     padding: 16px 40px;
+     text-align: center;
+     font-size: 0.85rem;
+     color: #f0ddd3;
+ }

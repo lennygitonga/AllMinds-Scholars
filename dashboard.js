@@ -60,7 +60,7 @@ if (user) {
                 <div class="not-logged-in">
                     <h2>You are not logged in</h2>
                     <p>Please log in to view your saved scholarships</p>
-                    <a href="join us.html" class="browse-btn">Go to Login</a>
+                    <a href="join-us.html" class="browse-btn">Go to Login</a>
                 </div>
             `
 }
