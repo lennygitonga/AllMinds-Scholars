@@ -78,7 +78,7 @@ async function loadSavedScholarships() {
     if (savedIds.length === 0) {
         savedGrid.innerHTML = `
                     <div class="empty-state">
-                        <div class="empty-icon">🔖</div>
+                        <div class="empty-icon"></div>
                         <h3>No saved scholarships yet</h3>
                         <p>Browse scholarships and save the ones you're interested in</p>
                         <a href="scholarships.html" class="browse-btn">Browse Scholarships</a>
@@ -202,5 +202,5 @@ function removeScholarship(id) {
 // LOGOUT
 function logout() {
     localStorage.removeItem('loggedInUser')
-    window.location.href = 'join us.html'
+    window.location.href = 'join-us.html'
 }

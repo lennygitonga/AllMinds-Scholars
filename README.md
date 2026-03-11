@@ -6,7 +6,7 @@
 AllMinds Scholars is a scholarship discovery platform built for students who are consistently overlooked by traditional scholarship search engines — neurodivergent students (ADHD, Autism, Dyslexia) and adult learners (career switchers, parents, and workers over 30 returning to education). It is also open to all students looking for worldwide scholarship opportunities.
 
 ## Live Demo
-[View on GitHub Pages]()
+[View on GitHub Pages](https://lennygitonga.github.io/AllMinds-Scholars/)
 
 ## Features
 
