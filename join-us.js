@@ -1,3 +1,6 @@
+import { auth, provider } from './firebase.js'
+import { signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+
 // navbar
 const hamburger = document.getElementById('hamburger')
 const navLinks = document.querySelector('.nav-links')
@@ -43,7 +46,7 @@ if (contrastToggle) {
 }
 
 // login and register toggle
-function switchTab(tab) {
+window.switchTab = function(tab) {
     const loginForm = document.getElementById('loginForm')
     const registerForm = document.getElementById('registerForm')
     const loginTab = document.getElementById('loginTab')
@@ -63,7 +66,7 @@ function switchTab(tab) {
 }
 
 // login
-function handleLogin() {
+window.handleLogin = function() {
     const email = document.getElementById('loginEmail').value.trim()
     const password = document.getElementById('loginPassword').value.trim()
 
@@ -84,7 +87,7 @@ function handleLogin() {
 }
 
 // Register
-function handleRegister() {
+window.handleRegister = function() {
     const name = document.getElementById('registerName').value.trim()
     const email = document.getElementById('registerEmail').value.trim()
     const password = document.getElementById('registerPassword').value.trim()
@@ -108,4 +111,21 @@ function handleRegister() {
     localStorage.setItem('loggedInUser', JSON.stringify(newUser))
 
     window.location.href = 'dashboard.html'
+}
+
+// Google Sign In
+window.googleSignIn = async function() {
+    try {
+        const result = await signInWithPopup(auth, provider)
+        const user = result.user
+        localStorage.setItem('loggedInUser', JSON.stringify({
+            name: user.displayName,
+            email: user.email,
+            savedScholarships: []
+        }))
+        window.location.href = 'dashboard.html'
+    } catch (error) {
+        console.error(error)
+        alert('Sign in failed. Try again!')
+    }
 }

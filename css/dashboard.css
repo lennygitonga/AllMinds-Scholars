@@ -127,7 +127,7 @@ nav {
 
 /* DASHBOARD HERO */
 .dashboard-hero {
-    background-image: url('assets/dashboard-bg.jpg');
+    background-image: url('assets\dashboard-bg.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
