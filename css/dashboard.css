@@ -127,7 +127,7 @@ nav {
 
 /* DASHBOARD HERO */
 .dashboard-hero {
-    background-image: url('assets\dashboard-bg.jpg');
+    background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1400');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -522,4 +522,53 @@ footer {
     text-align: center;
     font-size: 0.85rem;
     color: #f0ddd3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #fff8f2;
+        padding: 20px;
+        gap: 20px;
+        border-bottom: 1px solid #f0ddd3;
+        z-index: 99;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .access-bar { padding: 8px 20px; flex-wrap: wrap; }
+
+    .dashboard-hero { padding: 32px 20px; }
+
+    .dashboard-hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .welcome-text h1 { font-size: 1.5rem; }
+
+    .profile-card {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .stats-bar { padding: 16px 20px; }
+    .stats-bar-inner { flex-wrap: wrap; gap: 20px; }
+
+    .dashboard-content { padding: 0 20px; }
+
+    .saved-grid { grid-template-columns: 1fr; }
+
+    .footer-top { padding: 32px 20px; }
+    .footer-bottom { padding: 16px 20px; }
 }

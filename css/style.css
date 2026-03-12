@@ -128,8 +128,9 @@ nav {
     justify-content: space-between;
     gap: 60px;
     padding: 80px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+     background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1400');
+     min-height: 100vh;
 }
 
 .hero-text {

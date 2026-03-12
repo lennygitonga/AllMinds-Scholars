@@ -127,7 +127,7 @@ nav {
 
 /* PAGE HEADER */
 .page-header {
-    background: #fff8f2;
+    background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1400');
     border-bottom: 1px solid #f0ddd3;
     padding: 48px 40px;
     text-align: center;
@@ -483,4 +483,86 @@ footer {
     text-align: center;
     font-size: 0.85rem;
     color: #f0ddd3;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.save-btn {
+    padding: 7px 14px;
+    background: none;
+    border: 1px solid #f0ddd3;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: #6b4f4f;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+}
+
+.save-btn:hover {
+    border-color: #e07a5f;
+    color: #e07a5f;
+}
+
+.save-btn.saved {
+    background: #e07a5f;
+    color: white;
+    border-color: #e07a5f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #fff8f2;
+        padding: 20px;
+        gap: 20px;
+        border-bottom: 1px solid #f0ddd3;
+        z-index: 99;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .access-bar { padding: 8px 20px; flex-wrap: wrap; }
+
+    .page-header { padding: 32px 20px; }
+    .page-header h1 { font-size: 1.8rem; }
+
+    .search-bar { flex-direction: column; }
+    .search-bar input {
+        border-right: 2px solid #f0ddd3;
+        border-radius: 10px;
+        border-bottom: none;
+    }
+    .search-bar button { border-radius: 10px; }
+
+    .scholarships-layout {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin: 20px auto;
+    }
+
+    .filters { position: static; }
+
+    .scholarships-grid { grid-template-columns: 1fr; }
+
+    .card-footer { flex-wrap: wrap; gap: 10px; }
+
+    .card-actions { width: 100%; justify-content: flex-end; }
+
+    .footer-top { padding: 32px 20px; }
+    .footer-bottom { padding: 16px 20px; }
 }

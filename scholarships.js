@@ -13,7 +13,6 @@ if (hamburger) {
 const dyslexicToggle = document.getElementById('dyslexicToggle')
 const contrastToggle = document.getElementById('contrastToggle')
 
-// Load saved preferences
 if (localStorage.getItem('dyslexic') === 'true') {
     document.body.classList.add('dyslexic')
     if (dyslexicToggle) dyslexicToggle.classList.add('active')
@@ -44,6 +43,52 @@ if (contrastToggle) {
 
 let allScholarships = []
 
+// ===== GET LOGGED IN USER =====
+function getUser() {
+    return JSON.parse(localStorage.getItem('loggedInUser'))
+}
+
+// ===== CHECK IF SCHOLARSHIP IS SAVED =====
+function isSaved(id) {
+    const user = getUser()
+    if (!user) return false
+    return (user.savedScholarships || []).includes(id)
+}
+
+// ===== SAVE OR UNSAVE SCHOLARSHIP =====
+window.toggleSave = function(id) {
+    const user = getUser()
+
+    if (!user) {
+        alert('Please log in to save scholarships!')
+        window.location.href = 'join-us.html'
+        return
+    }
+
+    const saved = user.savedScholarships || []
+    const alreadySaved = saved.includes(id)
+
+    if (alreadySaved) {
+        user.savedScholarships = saved.filter(s => s !== id)
+    } else {
+        user.savedScholarships = [...saved, id]
+    }
+
+    // Update loggedInUser
+    localStorage.setItem('loggedInUser', JSON.stringify(user))
+
+    // Update the users array too so dashboard stays in sync
+    const users = JSON.parse(localStorage.getItem('users') || '[]')
+    const userIndex = users.findIndex(u => u.email === user.email)
+    if (userIndex !== -1) {
+        users[userIndex].savedScholarships = user.savedScholarships
+        localStorage.setItem('users', JSON.stringify(users))
+    }
+
+    // Re-render cards to update the button state
+    applyFilters()
+}
+
 // Fetch scholarships from JSON
 async function loadScholarships() {
     try {
@@ -58,22 +103,18 @@ async function loadScholarships() {
 // Apply search and filters
 function applyFilters() {
     const search = document.getElementById('searchInput').value.toLowerCase()
-
-    // Get all checked values for each filter group
     const audience = getChecked('Audience')
     const funding = getChecked('Funding Type')
     const appType = getChecked('Application Type')
     const time = getChecked('Time Commitment')
 
     let results = allScholarships.filter(s => {
-        // Search filter
         const matchesSearch = !search ||
             s.name.toLowerCase().includes(search) ||
             s.country.toLowerCase().includes(search) ||
             s.fieldOfStudy.toLowerCase().includes(search) ||
             s.provider.toLowerCase().includes(search)
 
-        // Checkbox filters — if none checked, show all
         const matchesAudience = audience.length === 0 || audience.includes(s.audience)
         const matchesFunding = funding.length === 0 || funding.includes(s.fundingType)
         const matchesAppType = appType.length === 0 || appType.includes(s.applicationType)
@@ -103,20 +144,24 @@ function displayScholarships(scholarships) {
 
     if (scholarships.length === 0) {
         grid.innerHTML = `
-                    <div class="no-results">
-                        <h3>No scholarships found</h3>
-                        <p>Try adjusting your filters or search term</p>
-                    </div>
-                `
+            <div class="no-results">
+                <h3>No scholarships found</h3>
+                <p>Try adjusting your filters or search term</p>
+            </div>
+        `
         return
     }
 
     grid.innerHTML = scholarships.map(s => createCard(s)).join('')
 }
 
+// Create card with save button
 function createCard(s) {
     const fundingClass = s.fundingType === 'Fully Funded' ? 'funded' : 'partial'
     const audienceClass = s.audience === 'Neurodivergent' ? 'neuro' : s.audience === 'Adult Learner' ? 'adult' : ''
+    const saved = isSaved(s.id)
+    const saveLabel = saved ? 'Saved' : 'Save'
+    const saveClass = saved ? 'save-btn saved' : 'save-btn'
 
     return `
         <div class="scholarship-card">
@@ -129,8 +174,11 @@ function createCard(s) {
             <p class="card-provider">${s.provider} · ${s.country}</p>
             <p class="card-description">${s.description}</p>
             <div class="card-footer">
-                <span class="card-deadline"> ${s.deadline}</span>
-                <a href="${s.link}" target="_blank" class="card-btn">Apply →</a>
+                <span class="card-deadline">${s.deadline}</span>
+                <div class="card-actions">
+                    <button class="${saveClass}" onclick="toggleSave('${s.id}')">${saveLabel}</button>
+                    <a href="${s.link}" target="_blank" class="card-btn">Apply →</a>
+                </div>
             </div>
         </div>
     `
