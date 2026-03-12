@@ -50,7 +50,7 @@ async function loadFeaturedScholarships() {
         const response = await fetch('json\scholarships.json')
         const scholarships = await response.json()
 
-        // Show first 3 as featured
+        
         const featured = scholarships.slice(0, 3)
 
         featured.forEach(scholarship => {

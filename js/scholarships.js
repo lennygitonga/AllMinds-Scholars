@@ -43,19 +43,19 @@ if (contrastToggle) {
 
 let allScholarships = []
 
-// ===== GET LOGGED IN USER =====
+// Get logged in user from localStorage
 function getUser() {
     return JSON.parse(localStorage.getItem('loggedInUser'))
 }
 
-// ===== CHECK IF SCHOLARSHIP IS SAVED =====
+// check if scholarship is saved by user
 function isSaved(id) {
     const user = getUser()
     if (!user) return false
     return (user.savedScholarships || []).includes(id)
 }
 
-// ===== SAVE OR UNSAVE SCHOLARSHIP =====
+// save or unsave scholarship
 window.toggleSave = function(id) {
     const user = getUser()
 
